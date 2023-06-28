@@ -1,16 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useSearchParams } from 'react-router-dom';
 
 // import todo from '../todo.json';
 import './ToDo.css';
 
 import { ToDo } from './ToDo';
 import { FormToDo } from 'components/FormToDo/FormToDo';
+import { FormFiterToDo } from 'components/FormToDo/FormFilterToDo';
 
 export const ToDoList = () => {
   const [todoList, setTodoList] = useState('');
   const [isDelete, setIsDelete] = useState(false);
   const [isCreate, setIsCreate] = useState(false);
+  const [filteredToDoList, setFilteredToDoList] = useState(null);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const filterText = searchParams.get('filter') ?? '';
+
+  console.log(searchParams.get('filter'));
+
+  useEffect(() => {
+    todoList && setFilteredToDoList(
+      todoList.filter(todo =>
+        todo.title.toLowerCase().includes(filterText.toLowerCase())
+      )
+    );
+  }, [filterText, searchParams, todoList]);
 
   useEffect(() => {
     if (localStorage.getItem('todo'))
@@ -69,10 +86,11 @@ export const ToDoList = () => {
           New Todo Created!
         </div>
       )}
+      <FormFiterToDo setSearchParams={setSearchParams} filterText={filterText}/>
       <FormToDo addToDo={addToDo} />
-      {todoList && (
+      {filteredToDoList && (
         <ul className="list-group list-group-flush">
-          {todoList.map(todo => (
+          {filteredToDoList.map(todo => (
             <ToDo
               key={todo.id}
               todo={todo}

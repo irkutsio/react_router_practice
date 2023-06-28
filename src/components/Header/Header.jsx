@@ -1,4 +1,14 @@
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+
+const StyledLink = styled(NavLink)`
+  background-color: #43e4e4;
+
+  &.active {
+    background-color: #e23c8f;
+  }
+`
+
 
 export const Header = ({  showModal }) => {
   return (
@@ -18,15 +28,15 @@ export const Header = ({  showModal }) => {
         </button> 
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <NavLink className="nav-link active" aria-current="page" to="/">
+            <StyledLink className="nav-link active" aria-current="page" to="/">
               Home
-            </NavLink>
-            <NavLink className="nav-link" to="/news">
+            </StyledLink>
+            <StyledLink className="nav-link" to="/news">
               News
-            </NavLink>
-            <NavLink className="nav-link" to="/todo">
+            </StyledLink>
+            <StyledLink className="nav-link" to="/todo">
               ToDo
-            </NavLink>
+            </StyledLink>
           </div>
         </div>
       </div>
