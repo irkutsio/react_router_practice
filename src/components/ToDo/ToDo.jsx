@@ -33,7 +33,7 @@ export const ToDo = ({ todo, handleCheckCompleted, handleDelete }) => {
                 handleDelete(todo.id);
               }}
             >
-              Close
+              Delete
             </button>
           )}
         </div>

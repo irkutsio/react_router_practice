@@ -1,10 +1,12 @@
 
 import { Route, Routes } from 'react-router-dom';
-import { HomePage } from './pages/HomePage';
+// import { HomePage } from './pages/HomePage';
 import { ToDoPage } from './pages/TodoPage';
 import { NewsPage } from './pages/NewsPage';
 import { Layout } from './Layuot/Layout';
 import { ToDoDetails } from './ToDo/ToDoDetails';
+
+import { HomePage } from './pages/HomePage';
 
 export const App = () => {
   return (

@@ -19,7 +19,7 @@ export const ToDoList = () => {
 
   const filterText = searchParams.get('filter') ?? '';
 
-  console.log(searchParams.get('filter'));
+ 
 
   useEffect(() => {
     todoList && setFilteredToDoList(
