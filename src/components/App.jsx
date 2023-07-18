@@ -7,6 +7,9 @@ import { Layout } from './Layuot/Layout';
 import { ToDoDetails } from './ToDo/ToDoDetails';
 
 import { HomePage } from './pages/HomePage';
+import { Login } from './pages/Login';
+import { Registration } from './pages/Registration';
+
 
 export const App = () => {
   return (
@@ -15,6 +18,8 @@ export const App = () => {
         <Route index element={<HomePage />} />
         <Route path="news" element={<NewsPage />} />
         <Route path="todo" element={<ToDoPage />} />
+        <Route path="login" element={<Login/>}/>
+        <Route path="registration" element={<Registration/>}/>
         <Route path="todo/:id" element={<ToDoDetails />} />
       </Route>
     </Routes>

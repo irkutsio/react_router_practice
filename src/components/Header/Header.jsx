@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 const StyledLink = styled(NavLink)`
   background-color: #43e4e4;
@@ -7,10 +7,9 @@ const StyledLink = styled(NavLink)`
   &.active {
     background-color: #e23c8f;
   }
-`
+`;
 
-
-export const Header = ({  showModal }) => {
+export const Header = ({ showModal }) => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -23,9 +22,9 @@ export const Header = ({  showModal }) => {
           aria-controls="navbarNavAltMarkup"
           aria-expanded="false"
           aria-label="Toggle navigation"
-        > 
-         <span className="navbar-toggler-icon"></span>
-        </button> 
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
             <StyledLink className="nav-link active" aria-current="page" to="/">
@@ -36,6 +35,12 @@ export const Header = ({  showModal }) => {
             </StyledLink>
             <StyledLink className="nav-link" to="/todo">
               ToDo
+            </StyledLink>
+            <StyledLink className="nav-link" to="/login">
+              Login
+            </StyledLink>
+            <StyledLink className="nav-link" to="/registration">
+            Registration
             </StyledLink>
           </div>
         </div>

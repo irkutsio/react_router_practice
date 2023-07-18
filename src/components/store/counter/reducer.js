@@ -1,3 +1,4 @@
+import { authReducer } from '../auth/authSlice';
 import { initialState } from '../initialState';
 import { DECREMENT, INCREMENT, SETSTEP } from './types';
 const { combineReducers } = require('redux');
@@ -36,4 +37,5 @@ const todoReducer = (state = initialState.todo, action) => {
 export const reducer = combineReducers({
   counter: counterReducer,
   todo: todoReducer,
+  auth: authReducer,
 });

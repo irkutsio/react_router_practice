@@ -1,4 +1,6 @@
 import { reducer } from './counter/reducer';
-const { createStore } = require('redux');
+const { createStore, combineReducers } = require('redux');
 
 export const store = createStore(reducer);
+
+
